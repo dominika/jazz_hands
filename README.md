@@ -7,6 +7,7 @@ hard-working hands!
 **jazz_hands** is an opinionated set of console-related gems and a bit of glue:
 
 * [**Pry**][pry] for a powerful shell alternative to IRB.
+* [**Byebug**][byebug] for a debugger.
 * [**Awesome Print**][awesome_print] for stylish pretty print.
 * [**Hirb**][hirb] for tabular collection output.
 * [**Pry Rails**][pry-rails] for additional commands (`show-routes`,
@@ -83,6 +84,7 @@ file an [issue][issues]. [Project changelog][changelog].
 
 
 [pry]:                http://pry.github.com
+[byebug]:             https://github.com/deivid-rodriguez/byebug
 [awesome_print]:      https://github.com/michaeldv/awesome_print
 [hirb]:               https://github.com/cldwalker/hirb
 [pry-rails]:          https://github.com/rweng/pry-rails
