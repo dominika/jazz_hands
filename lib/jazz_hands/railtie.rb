@@ -17,10 +17,14 @@ module JazzHands
 
         # Use awesome_print for output, but keep pry's pager. If Hirb is
         # enabled, try printing with it first.
-        Pry.config.print = ->(output, value) do
+        Pry.config.print = ->(output, value, _pry_) do
           return if JazzHands._hirb_output && Hirb::View.view_or_page_output(value)
           pretty = value.ai(indent: 2)
-          Pry::Helpers::BaseHelpers.stagger_output("=> #{pretty}", output)
+          if Pry.config.pager
+            _pry_.pager.page("=> #{pretty}")
+          else
+            puts "=> #{pretty}"
+          end
         end
 
         # Friendlier prompt - line number, app name, nesting levels look like
