@@ -13,6 +13,9 @@ module JazzHands
   class Railtie < Rails::Railtie
     initializer 'jazz_hands.initialize' do |app|
       silence_warnings do
+        if ENV['ENABLE_LIVE_SYNTAX_HIGHLIGHT']
+          JazzHands.enable_syntax_highlighting_as_you_type!
+        end
         # We're managing the loading of plugins. So don't let pry autoload them.
         Pry.config.should_load_plugins = false
 
